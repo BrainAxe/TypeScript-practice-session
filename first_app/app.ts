@@ -22,11 +22,14 @@ const result = add(number1, number2, printResult, resultPhrase);
 //   hobbies: ['Reading', 'Cooking']
 // };
 
+enum Role { ADMIN, READ_ONLY, AUTHOR };
+
 // Implicit way of type casting
 let person = {
   name: 'Tanzim Rizwan',
   age: 28,
-  hobbies: ['Reading', 'Cooking']
+  hobbies: ['Reading', 'Cooking'],
+  role: Role.AUTHOR
 };
 
 console.log(person.name);
@@ -37,3 +40,7 @@ favoriteActivities = ['Cooking'];
 let roles: [number, string]; // Tuples 
 roles = [1, 'admin'];
 roles.push(5) // Exception
+
+if (person.role === Role.AUTHOR) {
+  console.log('is author');
+}
