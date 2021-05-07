@@ -72,3 +72,11 @@ function addAndHandle(num1, num2, cb) {
 addAndHandle(5, 7, function (result) {
     console.log(result);
 });
+var userInput;
+var userName;
+userInput = 5;
+userInput = 'UserName';
+// userName = userInput;
+if (typeof userInput === 'string') {
+    userName = userInput;
+}

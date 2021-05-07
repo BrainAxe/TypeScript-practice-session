@@ -86,3 +86,15 @@ function addAndHandle(num1: number, num2: number, cb: (num:number) => void) {
 addAndHandle(5,7, (result) => {
   console.log(result)
 });
+
+let userInput: unknown;
+let userName: string;
+
+userInput = 5;
+userInput = 'UserName';
+
+// userName = userInput;
+
+if (typeof userInput === 'string') {
+  userName = userInput;
+}
