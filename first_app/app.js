@@ -42,3 +42,22 @@ roles.push(5); // Exception
 if (person.role === Role.AUTHOR) {
     console.log('is author');
 }
+function combine(input1, // union
+input2, // union
+resultConversion // union literal
+) {
+    var result;
+    if (typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number') {
+        result = +input1 + +input2;
+    }
+    else {
+        result = input1.toString() + input2.toString();
+    }
+    return result;
+}
+var combinedAges = combine(30, 28, 'as-number');
+console.log(combinedAges);
+var combinedStringAges = combine('30', '28', 'as-number');
+console.log(combinedStringAges);
+var combinedNames = combine('Tanzim', 'Rizwan', 'as-text');
+console.log(combinedNames);

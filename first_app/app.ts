@@ -44,3 +44,27 @@ roles.push(5) // Exception
 if (person.role === Role.AUTHOR) {
   console.log('is author');
 }
+
+function combine(
+  input1: number | string, // union
+  input2: number | string, // union
+  resultConversion: 'as-number' | 'as-text' // union literal
+) {
+  let result;
+  if (typeof input1 === 'number' && typeof input2 === 'number' || resultConversion === 'as-number') {
+    result = +input1 + +input2;
+  } else {
+    result = input1.toString() + input2.toString();
+  }
+  return result;
+}
+
+const combinedAges = combine(30, 28, 'as-number');
+console.log(combinedAges);
+
+const combinedStringAges = combine('30', '28', 'as-number');
+console.log(combinedStringAges)
+
+const combinedNames = combine('Tanzim', 'Rizwan', 'as-text');
+console.log(combinedNames);
+
