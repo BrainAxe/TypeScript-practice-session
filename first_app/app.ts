@@ -76,3 +76,13 @@ let newAdd: (a:number, b:number, c:boolean, d:string) => number;
 
 newAdd = add;
 console.log(newAdd(2, 5, true, "Result is: "));
+
+// Function Type in Callback
+function addAndHandle(num1: number, num2: number, cb: (num:number) => void) {
+  const result = num1 + num2;
+  cb(result);
+}
+
+addAndHandle(5,7, (result) => {
+  console.log(result)
+});

@@ -64,3 +64,11 @@ console.log(combinedNames);
 var newAdd;
 newAdd = add;
 console.log(newAdd(2, 5, true, "Result is: "));
+// Function Type in Callback
+function addAndHandle(num1, num2, cb) {
+    var result = num1 + num2;
+    cb(result);
+}
+addAndHandle(5, 7, function (result) {
+    console.log(result);
+});
