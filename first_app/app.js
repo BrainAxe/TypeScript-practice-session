@@ -60,3 +60,7 @@ var combinedStringAges = combine('30', '28', 'as-number');
 console.log(combinedStringAges);
 var combinedNames = combine('Tanzim', 'Rizwan', 'as-text');
 console.log(combinedNames);
+// Function Type
+var newAdd;
+newAdd = add;
+console.log(newAdd(2, 5, true, "Result is: "));

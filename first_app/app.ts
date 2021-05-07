@@ -70,3 +70,9 @@ console.log(combinedStringAges)
 const combinedNames = combine('Tanzim', 'Rizwan', 'as-text');
 console.log(combinedNames);
 
+
+// Function Type
+let newAdd: (a:number, b:number, c:boolean, d:string) => number;
+
+newAdd = add;
+console.log(newAdd(2, 5, true, "Result is: "));
