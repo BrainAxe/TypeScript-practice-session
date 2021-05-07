@@ -45,8 +45,10 @@ if (person.role === Role.AUTHOR) {
   console.log('is author');
 }
 
+type Combinable = number | string; // Type Alias
+
 function combine(
-  input1: number | string, // union
+  input1: Combinable,
   input2: number | string, // union
   resultConversion: 'as-number' | 'as-text' // union literal
 ) {

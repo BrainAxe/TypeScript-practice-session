@@ -42,8 +42,7 @@ roles.push(5); // Exception
 if (person.role === Role.AUTHOR) {
     console.log('is author');
 }
-function combine(input1, // union
-input2, // union
+function combine(input1, input2, // union
 resultConversion // union literal
 ) {
     var result;
