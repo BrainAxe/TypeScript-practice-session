@@ -3,6 +3,7 @@ function add(n1:number, n2:number, showResult: boolean, phrase:string) {
   result = n1 + n2;
   if (showResult) {
     console.log(phrase + result);
+    return "console log";
   } else {
     return n1 + n2;
   }
@@ -72,10 +73,10 @@ console.log(combinedNames);
 
 
 // Function Type
-let newAdd: (a:number, b:number, c:boolean, d:string) => number;
+// let newAdd: (a:number, b:number, c:boolean, d:string) => number;
 
-newAdd = add;
-console.log(newAdd(2, 5, true, "Result is: "));
+// newAdd = add;
+// console.log(newAdd(2, 5, true, "Result is: "));
 
 // Function Type in Callback
 function addAndHandle(num1: number, num2: number, cb: (num:number) => void) {
