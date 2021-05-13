@@ -1,8 +1,8 @@
-function merge<T extends object, U extends object>(objA:T, objB:U) {
+function merge<T extends object, U extends object>(objA: T, objB: U) {
   return Object.assign(objA, objB);
 }
 
-const mergedObj = merge({name: 'Tanzim'}, {age: 28});
+const mergedObj = merge({ name: 'Tanzim' }, { age: 28 });
 
 console.log(mergedObj.age);
 
@@ -10,7 +10,7 @@ interface Lengthy {
   length: number;
 }
 
-function countAndDescribe<T extends Lengthy>(element: T): [T, string]{
+function countAndDescribe<T extends Lengthy>(element: T): [T, string] {
   let descriptionText = 'Got no value.';
   if (element.length === 1) {
     descriptionText = 'Got 1 element';
@@ -22,20 +22,20 @@ function countAndDescribe<T extends Lengthy>(element: T): [T, string]{
 
 console.log(countAndDescribe(['Sports', 'Cooking']));
 
-function extractAndConvert<T extends object, U extends keyof T>(obj:T, key:U) {
+function extractAndConvert<T extends object, U extends keyof T>(obj: T, key: U) {
   return "Value: " + obj[key];
 }
 
-console.log(extractAndConvert({name: "Tanzim"}, "name"));
+console.log(extractAndConvert({ name: "Tanzim" }, "name"));
 
 class DataStorage<T extends string | number | boolean> {
   private data: T[] = [];
 
-  addItem(item:T) {
+  addItem(item: T) {
     this.data.push(item);
   }
 
-  removeItem(item:T) {
+  removeItem(item: T) {
     if (this.data.indexOf(item) === -1) {
       return;
     }
@@ -66,3 +66,22 @@ console.log(numberStorage.getItem());
 // //....
 // objectStorage.removeItem(objOne);
 // console.log(objectStorage.getItem());
+
+interface CourseGoal {
+  title: string;
+  description: string;
+  completeUnit: Date;
+}
+
+function createCourseGoal(title: string, description: string, date: Date): CourseGoal {
+  let courseGoal: Partial<CourseGoal> = {};
+  courseGoal.title = title;
+  courseGoal.description = description;
+  courseGoal.completeUnit = date;
+  return courseGoal as CourseGoal;
+}
+
+const names: Readonly<string []> = ['Tanzim', 'Rizwan'];
+
+// Generic Type lock in a type
+// Union Type more flexiable to use different type
