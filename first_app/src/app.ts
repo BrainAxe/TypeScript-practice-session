@@ -14,7 +14,9 @@ function WithTemplate(template:string, hookId:string){
   }
 }
 
-// @Logger('LOGGING - PERSON')
+
+// Execution Bottom Up
+@Logger('LOGGING - PERSON')
 @WithTemplate('<h1>Person Object</h1>','app')
 class Person {
   name = 'Tanzim';
