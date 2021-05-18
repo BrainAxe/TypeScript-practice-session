@@ -8,15 +8,15 @@ export abstract class Component<T extends HTMLElement, U extends HTMLElement> {
     templateId: string,
     hostElementId: string,
     insertAtStart: boolean,
-    newElemement?: string,
+    newElement?: string,
   ) {
     this.templateElement = document.getElementById(templateId)! as HTMLTemplateElement;
     this.hostElement = document.getElementById(hostElementId)! as T;
 
     const importedNode = document.importNode(this.templateElement.content, true);
     this.element = importedNode.firstElementChild as U;
-    if (newElemement) {
-      this.element.id = newElemement;
+    if (newElement) {
+      this.element.id = newElement;
     }
 
     this.attach(insertAtStart);

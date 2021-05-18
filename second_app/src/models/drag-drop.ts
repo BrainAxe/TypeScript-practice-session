@@ -6,6 +6,6 @@ export interface Draggable {
 
 export interface DragTarget {
   dragOverHandler(event: DragEvent): void;
-  drophandler(event: DragEvent): void;
+  dropHandler(event: DragEvent): void;
   dragLeaveHandler(event: DragEvent): void;
 }
